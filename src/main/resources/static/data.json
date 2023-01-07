@@ -1,0 +1,6 @@
+{
+  "id": "1",
+  "partitionKey": "partitionKey",
+  "name": "Pet 1",
+  "dangerRating": 10
+}

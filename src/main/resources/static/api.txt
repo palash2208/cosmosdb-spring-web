@@ -1,0 +1,4 @@
+http://localhost:8080/pets/keyVault
+http://localhost:8080/pets/config
+http://localhost:8080/pets/all
+http://localhost:8080/pets/1

@@ -1,5 +1,8 @@
 package com.pal.sample.cosmosdb.controller;
 
+import com.azure.security.keyvault.secrets.SecretClient;
+
+import com.azure.security.keyvault.secrets.models.KeyVaultSecret;
 import com.pal.sample.cosmosdb.configuration.CosmosDbConfigProperties;
 import com.pal.sample.cosmosdb.model.Pet;
 import com.pal.sample.cosmosdb.service.PetService;
@@ -19,9 +22,18 @@ public class PetController {
     @Autowired
     private CosmosDbConfigProperties cosmosDbConfigProperties;
 
+    @Autowired
+    private SecretClient secretClient;
+
     @GetMapping("/pets/config")
     public String getConfig() {
         return cosmosDbConfigProperties.getUri();
+    }
+
+    @GetMapping("/pets/keyVault")
+    public String getKeyVaultSecretName() {
+     KeyVaultSecret secVal = secretClient.getSecret("pal-cosmosdb-uri");
+     return secVal.getValue();
     }
 
     @GetMapping("/pets/all")
