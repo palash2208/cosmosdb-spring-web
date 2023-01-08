@@ -1,0 +1,8 @@
+https://stackoverflow.com/questions/61577418/why-spring-boot-application-is-not-working-after-deployment-on-azure-web-app
+https://stackoverflow.com/questions/36455758/spring-boot-rest-webservice-returns-404-when-deployed-to-azure
+https://stackoverflow.com/questions/48674306/unable-to-hit-restful-endpoints-when-uploading-to-azure
+https://carldesouza.com/updating-an-azure-app-service-through-kudu/
+https://learn.microsoft.com/en-us/training/modules/deploy-java-spring-boot-app-service-mysql/5-exercise-deploy
+
+
+The last link is just for reference. But we have deployed with Github Action and App Service Integration.
