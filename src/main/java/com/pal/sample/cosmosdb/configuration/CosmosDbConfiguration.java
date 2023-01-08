@@ -6,13 +6,13 @@ import com.azure.security.keyvault.secrets.SecretClient;
 import com.azure.security.keyvault.secrets.SecretClientBuilder;
 import com.azure.security.keyvault.secrets.models.KeyVaultSecret;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
-@Configuration
+
+// only for reference = not used
 public class CosmosDbConfiguration {
 
-    @Bean
+    //@Bean
     public SecretClient getSecretClient(KVConfigProperties kvConfigProperties) {
         return new SecretClientBuilder()
                 .vaultUrl(kvConfigProperties.getUri())
@@ -34,14 +34,14 @@ public class CosmosDbConfiguration {
                 .buildClient();
     }
 
-//    @Bean
-//    public CosmosClient getCosmosClient(CosmosDbConfigProperties cosmosDbConfigProperties) {
-//        return new CosmosClientBuilder()
-//                .endpoint(cosmosDbConfigProperties.getUri())
-//                .key(cosmosDbConfigProperties.getKey())
-//                .consistencyLevel(ConsistencyLevel.SESSION)
-//                .buildClient();
-//    }
+    @Bean
+    public CosmosClient getCosmosClient(CosmosDbConfigProperties cosmosDbConfigProperties) {
+        return new CosmosClientBuilder()
+                .endpoint(cosmosDbConfigProperties.getUri())
+                .key(cosmosDbConfigProperties.getKey())
+                .consistencyLevel(ConsistencyLevel.SESSION)
+                .buildClient();
+    }
 
     @Bean
     public CosmosDatabase getAppCosmosDb(CosmosClient cosmosClient) {
