@@ -15,6 +15,11 @@ public class PetController {
     @Autowired
     private PetService petService;
 
+    @GetMapping("/healthCheck")
+    public String ping() {
+        return "Healthy";
+    }
+
     @GetMapping("/pets/all")
     public List<Pet> getPets() {
         return petService.getAllPets();
