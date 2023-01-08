@@ -15,7 +15,7 @@ public class PetController {
     @Autowired
     private PetService petService;
 
-    @GetMapping("/healthCheck")
+    @GetMapping("/")
     public String ping() {
         return "Healthy";
     }
