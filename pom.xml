@@ -14,7 +14,7 @@
 	<name>cosmosdb</name>
 	<description>Spring Web and CosmosDB Connectivity and azure-cosmos</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
