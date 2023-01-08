@@ -20,8 +20,8 @@ public class CosmosDbConfiguration {
                 .buildClient();
     }
 
-    @Bean
-    @Primary
+    //@Bean
+    //@Primary
     public CosmosClient getCosmosClient(SecretClient secretClient) {
 
         KeyVaultSecret cosmosdbUriSecret = secretClient.getSecret("pal-cosmosdb-uri");
@@ -34,7 +34,7 @@ public class CosmosDbConfiguration {
                 .buildClient();
     }
 
-    @Bean
+    //@Bean
     public CosmosClient getCosmosClient(CosmosDbConfigProperties cosmosDbConfigProperties) {
         return new CosmosClientBuilder()
                 .endpoint(cosmosDbConfigProperties.getUri())
@@ -43,12 +43,12 @@ public class CosmosDbConfiguration {
                 .buildClient();
     }
 
-    @Bean
+    //@Bean
     public CosmosDatabase getAppCosmosDb(CosmosClient cosmosClient) {
         return cosmosClient.getDatabase("app");
     }
 
-    @Bean
+    //@Bean
     public CosmosContainer getCosmosDbPetContainer(CosmosDatabase cosmosDatabase) {
         return cosmosDatabase.getContainer("pets");
     }
